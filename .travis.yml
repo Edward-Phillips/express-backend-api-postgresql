@@ -8,7 +8,7 @@ matrix:
 cache:
   directories: [node_modules]
 install:
-  npm
+  yarn
 after_success: yarn coverage
 before_script:
   - psql -c 'create database testdb;' -U postgres
