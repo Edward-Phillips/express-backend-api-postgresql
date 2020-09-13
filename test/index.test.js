@@ -13,4 +13,16 @@ describe('Index page test', () => {
         done();
       });
   });
+  it('gets stock url', done => {
+    server
+      .get(`${BASE_URL}/stock`)
+      .expect(200)
+      .end((err, res) => {
+        expect(res.status).to.equal(200);
+        expect(res.body.message).to.equal(
+          'one day this will be the endpoint for stock entry'
+        );
+        done();
+      });
+  });
 });
